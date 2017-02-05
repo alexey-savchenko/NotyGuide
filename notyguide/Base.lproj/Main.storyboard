@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cwD-Ug-bvD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="notyguide" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pc0-0y-cfW" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQf-db-NJg" customClass="RoundButton" customModule="notyguide" customModuleProvider="target">
+                                <rect key="frame" x="305" y="512" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="4m9-fe-RgA"/>
+                                    <constraint firstAttribute="width" constant="60" id="Ser-VT-5IJ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="plusIcon"/>
+                                <connections>
+                                    <action selector="btnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XCr-lg-L9m"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnl-3L-LZO" customClass="RoundButton" customModule="notyguide" customModuleProvider="target">
+                                <rect key="frame" x="240" y="472" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="XQU-ul-NPv"/>
+                                    <constraint firstAttribute="width" constant="60" id="sok-71-hGe"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="notebookIcon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz6-ri-bca" customClass="RoundButton" customModule="notyguide" customModuleProvider="target">
+                                <rect key="frame" x="239" y="547" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="cY0-uc-gCo"/>
+                                    <constraint firstAttribute="height" constant="60" id="qAf-iw-z9i"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="locationIcon"/>
+                                <connections>
+                                    <action selector="locationButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sGv-VP-bxO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9g-Fa-05W" customClass="RoundButton" customModule="notyguide" customModuleProvider="target">
+                                <rect key="frame" x="305" y="427" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Psf-30-3ZJ"/>
+                                    <constraint firstAttribute="width" constant="60" id="Qz5-Hm-38Y"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="lensIcon"/>
+                                <connections>
+                                    <action selector="searchButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CEh-Pp-udO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="d9g-Fa-05W" firstAttribute="leading" secondItem="jnl-3L-LZO" secondAttribute="trailing" constant="5" id="53J-5V-miL"/>
+                            <constraint firstAttribute="trailing" secondItem="tQf-db-NJg" secondAttribute="trailing" constant="10" id="AiJ-MO-px1"/>
+                            <constraint firstAttribute="bottom" secondItem="pc0-0y-cfW" secondAttribute="bottom" id="Etf-hQ-2bP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Bz6-ri-bca" secondAttribute="bottom" constant="60" id="EvX-dx-8dm"/>
+                            <constraint firstItem="pc0-0y-cfW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Fa8-rx-PaD"/>
+                            <constraint firstItem="pc0-0y-cfW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="I4L-4J-VpG"/>
+                            <constraint firstAttribute="trailing" secondItem="pc0-0y-cfW" secondAttribute="trailing" id="Xlk-9v-Ybs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="d9g-Fa-05W" secondAttribute="bottom" constant="180" id="bZR-UM-GnP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jnl-3L-LZO" secondAttribute="bottom" constant="135" id="bu0-qI-zhv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tQf-db-NJg" secondAttribute="bottom" constant="95" id="lbs-8V-S1c"/>
+                            <constraint firstAttribute="trailing" secondItem="d9g-Fa-05W" secondAttribute="trailing" constant="10" id="oBT-yj-UMo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bz6-ri-bca" secondAttribute="trailing" constant="60" id="pWY-x2-wME"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YQv-Ld-TYC"/>
+                    <connections>
+                        <outlet property="btn" destination="tQf-db-NJg" id="2vg-PF-Kjm"/>
+                        <outlet property="btnConstr" destination="AiJ-MO-px1" id="BYS-JP-v4t"/>
+                        <outlet property="googleMapsView" destination="pc0-0y-cfW" id="Tll-hL-xLH"/>
+                        <outlet property="locationButton" destination="Bz6-ri-bca" id="T1W-Vz-zNw"/>
+                        <outlet property="notepadButton" destination="jnl-3L-LZO" id="Isx-WJ-TLp"/>
+                        <outlet property="searchButton" destination="d9g-Fa-05W" id="0by-dN-IhK"/>
+                        <segue destination="9Uo-Np-aZf" kind="show" identifier="toSavedLocationsView" id="sEF-Da-sXK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1001" y="-546"/>
+        </scene>
+        <!--Saved Locations Table View Controller-->
+        <scene sceneID="F0J-BJ-Y38">
+            <objects>
+                <tableViewController id="9Uo-Np-aZf" customClass="SavedLocationsTableViewController" customModule="notyguide" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="a53-f6-j0p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SavedLocationCell" id="T8z-Dv-wqR">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T8z-Dv-wqR" id="6Wm-b7-bxO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9Uo-Np-aZf" id="4KB-RD-sxB"/>
+                            <outlet property="delegate" destination="9Uo-Np-aZf" id="D1O-rE-qGt"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lAm-eA-jvt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2030" y="-546"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hsa-dr-L7R">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cwD-Ug-bvD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="55G-TM-1gi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ZMb-R8-CR3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="33h-kj-KVR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-66.400000000000006" y="-545.57721139430294"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="lensIcon" width="256" height="256"/>
+        <image name="locationIcon" width="256" height="256"/>
+        <image name="notebookIcon" width="256" height="256"/>
+        <image name="plusIcon" width="256" height="256"/>
+    </resources>
+</document>

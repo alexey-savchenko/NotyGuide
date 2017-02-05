@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8071DB041E44F7B600DCE2B2 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DB031E44F7B600DCE2B2 /* RoundButton.swift */; };
+		8071DB061E47C62100DCE2B2 /* SavedLocationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DB051E47C62100DCE2B2 /* SavedLocationsTableViewController.swift */; };
+		80B3FB991E44AD430084259B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B3FB981E44AD430084259B /* AppDelegate.swift */; };
+		80B3FB9B1E44AD430084259B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B3FB9A1E44AD430084259B /* ViewController.swift */; };
+		80B3FB9E1E44AD430084259B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B3FB9C1E44AD430084259B /* Main.storyboard */; };
+		80B3FBA11E44AD430084259B /* notyguide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80B3FB9F1E44AD430084259B /* notyguide.xcdatamodeld */; };
+		80B3FBA31E44AD430084259B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B3FBA21E44AD430084259B /* Assets.xcassets */; };
+		80B3FBA61E44AD430084259B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B3FBA41E44AD430084259B /* LaunchScreen.storyboard */; };
+		C860182980AFE02DA8874AC8 /* Pods_notyguide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9D169FE17A09BBB658E3B1 /* Pods_notyguide.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2F9D169FE17A09BBB658E3B1 /* Pods_notyguide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_notyguide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8071DB031E44F7B600DCE2B2 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		8071DB051E47C62100DCE2B2 /* SavedLocationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedLocationsTableViewController.swift; sourceTree = "<group>"; };
+		80B3FB951E44AD430084259B /* notyguide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notyguide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B3FB981E44AD430084259B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		80B3FB9A1E44AD430084259B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80B3FB9D1E44AD430084259B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		80B3FBA01E44AD430084259B /* notyguide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = notyguide.xcdatamodel; sourceTree = "<group>"; };
+		80B3FBA21E44AD430084259B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80B3FBA51E44AD430084259B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		80B3FBA71E44AD430084259B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A97EB917258B49BB26E3D7C1 /* Pods-notyguide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notyguide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-notyguide/Pods-notyguide.debug.xcconfig"; sourceTree = "<group>"; };
+		B9A84C38682B9F940F2CBE69 /* Pods-notyguide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notyguide.release.xcconfig"; path = "Pods/Target Support Files/Pods-notyguide/Pods-notyguide.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80B3FB921E44AD430084259B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C860182980AFE02DA8874AC8 /* Pods_notyguide.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80B3FB8C1E44AD430084259B = {
+			isa = PBXGroup;
+			children = (
+				80B3FB971E44AD430084259B /* notyguide */,
+				80B3FB961E44AD430084259B /* Products */,
+				AA90336064E21532EEA4BB94 /* Pods */,
+				AFFE7D082F45A203F78AC430 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		80B3FB961E44AD430084259B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80B3FB951E44AD430084259B /* notyguide.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80B3FB971E44AD430084259B /* notyguide */ = {
+			isa = PBXGroup;
+			children = (
+				80B3FB981E44AD430084259B /* AppDelegate.swift */,
+				80B3FB9A1E44AD430084259B /* ViewController.swift */,
+				80B3FB9C1E44AD430084259B /* Main.storyboard */,
+				80B3FBA21E44AD430084259B /* Assets.xcassets */,
+				80B3FBA41E44AD430084259B /* LaunchScreen.storyboard */,
+				80B3FBA71E44AD430084259B /* Info.plist */,
+				80B3FB9F1E44AD430084259B /* notyguide.xcdatamodeld */,
+				8071DB031E44F7B600DCE2B2 /* RoundButton.swift */,
+				8071DB051E47C62100DCE2B2 /* SavedLocationsTableViewController.swift */,
+			);
+			path = notyguide;
+			sourceTree = "<group>";
+		};
+		AA90336064E21532EEA4BB94 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A97EB917258B49BB26E3D7C1 /* Pods-notyguide.debug.xcconfig */,
+				B9A84C38682B9F940F2CBE69 /* Pods-notyguide.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AFFE7D082F45A203F78AC430 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F9D169FE17A09BBB658E3B1 /* Pods_notyguide.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80B3FB941E44AD430084259B /* notyguide */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80B3FBAA1E44AD430084259B /* Build configuration list for PBXNativeTarget "notyguide" */;
+			buildPhases = (
+				5E1ADDC630D4BA2FB408510E /* [CP] Check Pods Manifest.lock */,
+				80B3FB911E44AD430084259B /* Sources */,
+				80B3FB921E44AD430084259B /* Frameworks */,
+				80B3FB931E44AD430084259B /* Resources */,
+				F149B0FBC6ADE0FA5F391308 /* [CP] Embed Pods Frameworks */,
+				C3EED395CBF66138AE01EAE8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = notyguide;
+			productName = notyguide;
+			productReference = 80B3FB951E44AD430084259B /* notyguide.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80B3FB8D1E44AD430084259B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = SuddenlyPancakes;
+				TargetAttributes = {
+					80B3FB941E44AD430084259B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 58J8NPW4SN;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 80B3FB901E44AD430084259B /* Build configuration list for PBXProject "notyguide" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 80B3FB8C1E44AD430084259B;
+			productRefGroup = 80B3FB961E44AD430084259B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80B3FB941E44AD430084259B /* notyguide */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80B3FB931E44AD430084259B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B3FBA61E44AD430084259B /* LaunchScreen.storyboard in Resources */,
+				80B3FBA31E44AD430084259B /* Assets.xcassets in Resources */,
+				80B3FB9E1E44AD430084259B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E1ADDC630D4BA2FB408510E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C3EED395CBF66138AE01EAE8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-notyguide/Pods-notyguide-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F149B0FBC6ADE0FA5F391308 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-notyguide/Pods-notyguide-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80B3FB911E44AD430084259B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8071DB061E47C62100DCE2B2 /* SavedLocationsTableViewController.swift in Sources */,
+				8071DB041E44F7B600DCE2B2 /* RoundButton.swift in Sources */,
+				80B3FBA11E44AD430084259B /* notyguide.xcdatamodeld in Sources */,
+				80B3FB9B1E44AD430084259B /* ViewController.swift in Sources */,
+				80B3FB991E44AD430084259B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		80B3FB9C1E44AD430084259B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80B3FB9D1E44AD430084259B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		80B3FBA41E44AD430084259B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80B3FBA51E44AD430084259B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		80B3FBA81E44AD430084259B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80B3FBA91E44AD430084259B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80B3FBAB1E44AD430084259B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A97EB917258B49BB26E3D7C1 /* Pods-notyguide.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 58J8NPW4SN;
+				INFOPLIST_FILE = notyguide/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.svchdzgn.notyguide;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		80B3FBAC1E44AD430084259B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9A84C38682B9F940F2CBE69 /* Pods-notyguide.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 58J8NPW4SN;
+				INFOPLIST_FILE = notyguide/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.svchdzgn.notyguide;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80B3FB901E44AD430084259B /* Build configuration list for PBXProject "notyguide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B3FBA81E44AD430084259B /* Debug */,
+				80B3FBA91E44AD430084259B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80B3FBAA1E44AD430084259B /* Build configuration list for PBXNativeTarget "notyguide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B3FBAB1E44AD430084259B /* Debug */,
+				80B3FBAC1E44AD430084259B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		80B3FB9F1E44AD430084259B /* notyguide.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				80B3FBA01E44AD430084259B /* notyguide.xcdatamodel */,
+			);
+			currentVersion = 80B3FBA01E44AD430084259B /* notyguide.xcdatamodel */;
+			path = notyguide.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 80B3FB8D1E44AD430084259B /* Project object */;
+}
