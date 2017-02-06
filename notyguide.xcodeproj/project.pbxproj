@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		8071DB041E44F7B600DCE2B2 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DB031E44F7B600DCE2B2 /* RoundButton.swift */; };
 		8071DB061E47C62100DCE2B2 /* SavedLocationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DB051E47C62100DCE2B2 /* SavedLocationsTableViewController.swift */; };
+		8071DB081E48402D00DCE2B2 /* LocationGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DB071E48402D00DCE2B2 /* LocationGuideViewController.swift */; };
+		80A7E3BB1E486B5900ADA632 /* SavedLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7E3BA1E486B5900ADA632 /* SavedLocationCell.swift */; };
 		80B3FB991E44AD430084259B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B3FB981E44AD430084259B /* AppDelegate.swift */; };
-		80B3FB9B1E44AD430084259B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B3FB9A1E44AD430084259B /* ViewController.swift */; };
+		80B3FB9B1E44AD430084259B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B3FB9A1E44AD430084259B /* MainViewController.swift */; };
 		80B3FB9E1E44AD430084259B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B3FB9C1E44AD430084259B /* Main.storyboard */; };
-		80B3FBA11E44AD430084259B /* notyguide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80B3FB9F1E44AD430084259B /* notyguide.xcdatamodeld */; };
 		80B3FBA31E44AD430084259B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B3FBA21E44AD430084259B /* Assets.xcassets */; };
 		80B3FBA61E44AD430084259B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B3FBA41E44AD430084259B /* LaunchScreen.storyboard */; };
+		80DE31551E489C4D00029EF0 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80DE31531E489C4D00029EF0 /* DataModel.xcdatamodeld */; };
 		C860182980AFE02DA8874AC8 /* Pods_notyguide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9D169FE17A09BBB658E3B1 /* Pods_notyguide.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,14 +24,16 @@
 		2F9D169FE17A09BBB658E3B1 /* Pods_notyguide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_notyguide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8071DB031E44F7B600DCE2B2 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		8071DB051E47C62100DCE2B2 /* SavedLocationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedLocationsTableViewController.swift; sourceTree = "<group>"; };
+		8071DB071E48402D00DCE2B2 /* LocationGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationGuideViewController.swift; sourceTree = "<group>"; };
+		80A7E3BA1E486B5900ADA632 /* SavedLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedLocationCell.swift; sourceTree = "<group>"; };
 		80B3FB951E44AD430084259B /* notyguide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notyguide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B3FB981E44AD430084259B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		80B3FB9A1E44AD430084259B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80B3FB9A1E44AD430084259B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		80B3FB9D1E44AD430084259B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		80B3FBA01E44AD430084259B /* notyguide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = notyguide.xcdatamodel; sourceTree = "<group>"; };
 		80B3FBA21E44AD430084259B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80B3FBA51E44AD430084259B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80B3FBA71E44AD430084259B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80DE31541E489C4D00029EF0 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		A97EB917258B49BB26E3D7C1 /* Pods-notyguide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notyguide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-notyguide/Pods-notyguide.debug.xcconfig"; sourceTree = "<group>"; };
 		B9A84C38682B9F940F2CBE69 /* Pods-notyguide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notyguide.release.xcconfig"; path = "Pods/Target Support Files/Pods-notyguide/Pods-notyguide.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,14 +72,16 @@
 			isa = PBXGroup;
 			children = (
 				80B3FB981E44AD430084259B /* AppDelegate.swift */,
-				80B3FB9A1E44AD430084259B /* ViewController.swift */,
+				80B3FB9A1E44AD430084259B /* MainViewController.swift */,
 				80B3FB9C1E44AD430084259B /* Main.storyboard */,
 				80B3FBA21E44AD430084259B /* Assets.xcassets */,
 				80B3FBA41E44AD430084259B /* LaunchScreen.storyboard */,
 				80B3FBA71E44AD430084259B /* Info.plist */,
-				80B3FB9F1E44AD430084259B /* notyguide.xcdatamodeld */,
 				8071DB031E44F7B600DCE2B2 /* RoundButton.swift */,
 				8071DB051E47C62100DCE2B2 /* SavedLocationsTableViewController.swift */,
+				8071DB071E48402D00DCE2B2 /* LocationGuideViewController.swift */,
+				80A7E3BA1E486B5900ADA632 /* SavedLocationCell.swift */,
+				80DE31531E489C4D00029EF0 /* DataModel.xcdatamodeld */,
 			);
 			path = notyguide;
 			sourceTree = "<group>";
@@ -226,10 +232,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8071DB081E48402D00DCE2B2 /* LocationGuideViewController.swift in Sources */,
 				8071DB061E47C62100DCE2B2 /* SavedLocationsTableViewController.swift in Sources */,
 				8071DB041E44F7B600DCE2B2 /* RoundButton.swift in Sources */,
-				80B3FBA11E44AD430084259B /* notyguide.xcdatamodeld in Sources */,
-				80B3FB9B1E44AD430084259B /* ViewController.swift in Sources */,
+				80DE31551E489C4D00029EF0 /* DataModel.xcdatamodeld in Sources */,
+				80A7E3BB1E486B5900ADA632 /* SavedLocationCell.swift in Sources */,
+				80B3FB9B1E44AD430084259B /* MainViewController.swift in Sources */,
 				80B3FB991E44AD430084259B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,13 +409,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		80B3FB9F1E44AD430084259B /* notyguide.xcdatamodeld */ = {
+		80DE31531E489C4D00029EF0 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				80B3FBA01E44AD430084259B /* notyguide.xcdatamodel */,
+				80DE31541E489C4D00029EF0 /* DataModel.xcdatamodel */,
 			);
-			currentVersion = 80B3FBA01E44AD430084259B /* notyguide.xcdatamodel */;
-			path = notyguide.xcdatamodeld;
+			currentVersion = 80DE31541E489C4D00029EF0 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
