@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="-546"/>
+            <point key="canvasLocation" x="951" y="-546"/>
         </scene>
         <!--Location Guide View Controller-->
         <scene sceneID="gwU-8r-sFk">
@@ -164,10 +164,14 @@
                             <constraint firstAttribute="trailing" secondItem="OCA-Ok-h57" secondAttribute="trailing" id="jHi-46-f9Z"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="OCA-Ok-h57" id="xML-KL-Tnv"/>
+                        <outlet property="metersToTargetLabel" destination="uxM-2f-3xb" id="uhQ-wy-EbD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ckd-ew-qLk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1996" y="-857.72113943028489"/>
+            <point key="canvasLocation" x="2831" y="-519"/>
         </scene>
         <!--Saved Locations-->
         <scene sceneID="F0J-BJ-Y38">
@@ -280,10 +284,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Jnr-ku-vlP" kind="show" identifier="toLocationGuideView" id="YzW-iq-bcK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lAm-eA-jvt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1996" y="-170.46476761619192"/>
+            <point key="canvasLocation" x="1878" y="-56"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hsa-dr-L7R">
@@ -310,4 +317,7 @@
         <image name="notebookIcon" width="256" height="256"/>
         <image name="plusIcon" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="k9z-QY-HIc"/>
+    </inferredMetricsTieBreakers>
 </document>

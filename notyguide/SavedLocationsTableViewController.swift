@@ -8,10 +8,15 @@
 
 import UIKit
 import CoreData
+import GoogleMaps
 
 class SavedLocationsTableViewController: UITableViewController {
   
+  
+  //MARK: Properiites
   var locations: [Location] = []
+  var selectedLocation = GMSMarker()
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -65,6 +70,21 @@ class SavedLocationsTableViewController: UITableViewController {
     }
   }
   
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    selectedLocation = GMSMarker(position: CLLocationCoordinate2D(latitude: locations[indexPath.row].latitude, longitude: locations[indexPath.row].longtitude))
+    
+    performSegue(withIdentifier: "toLocationGuideView", sender: self)
+    
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "toLocationGuideView" {
+      let target = segue.destination as! LocationGuideViewController
+      target.marker = selectedLocation
+    }
+  }
+  
   @IBAction func deleteAllRecordsFromCoreData(_ sender: UIBarButtonItem) {
     let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Location")
@@ -86,6 +106,8 @@ class SavedLocationsTableViewController: UITableViewController {
       print(error)
     }
   }
+  
+  
   
   
 }
