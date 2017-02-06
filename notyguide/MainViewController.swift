@@ -9,17 +9,19 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import CoreData
 
-class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, GMSAutocompleteViewControllerDelegate {
+class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, GMSAutocompleteViewControllerDelegate {
   
   
   // MARK: Properities
   let locationManager = CLLocationManager()
   var plusButtonTimesTapped = 0
+  var markerOnMapView = GMSMarker()
+  var tempNameOfLocationToSave: String?
   
+  // MARK: Outlets
   @IBOutlet weak var googleMapsView: GMSMapView!
-  
-  // MARK: Outlets for buttons
   
   @IBOutlet weak var btnConstr: NSLayoutConstraint!
   @IBOutlet weak var btn: RoundButton!
@@ -27,7 +29,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
   @IBOutlet weak var searchButton: RoundButton!
   @IBOutlet weak var locationButton: RoundButton!
   
-  
+  @IBOutlet weak var saveLocationButton: UIBarButtonItem!
+  @IBOutlet weak var headToLocationButton: UIBarButtonItem!
   
   // MARK: Methods
   
@@ -43,7 +46,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     locationManager.requestWhenInUseAuthorization()
     locationManager.startUpdatingLocation()
     locationManager.startMonitoringSignificantLocationChanges()
-  
+    
     btnConstr.constant -= view.bounds.width / 5
     
     googleMapsView.settings.zoomGestures = true
@@ -68,14 +71,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
   }
   
   //MARK: Outlets
+  
+  
+  @IBAction func notepadButtonTap(_ sender: RoundButton) {
+    performSegue(withIdentifier: "toSavedLocationsView", sender: self)
+  }
+  
   @IBAction func locationButtonTap(_ sender: RoundButton) {
     if let loc  = googleMapsView.myLocation {
       let camera = GMSCameraPosition.camera(withLatitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude, zoom: 16.0)
-      let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-      mapView.isMyLocationEnabled = true
-      
       self.googleMapsView.camera = camera
-      
     }
   }
   @IBAction func btnTap(_ sender: RoundButton) {
@@ -108,7 +113,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
                      animations: {
                       btn.bounds.size = CGSize(width: 60, height: 60)
                       btn.layer.cornerRadius = 30
-      }) {success in
+      }) { success in
         if success {
           UIView.animate(withDuration: 0.1, animations: {
             self.notepadButton.alpha = 0
@@ -129,11 +134,64 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     self.present(autocompleteController, animated: true, completion: nil)
   }
   
-
+  @IBAction func headToLocationButtonTap(_ sender: UIBarButtonItem) {
+    performSegue(withIdentifier: "toLocationGuideView", sender: self)
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "toLocationGuideView" {
+      let target = segue.destination as! LocationGuideViewController
+      target.marker = markerOnMapView
+    }
+  }
+  
+  @IBAction func saveLocationButtonTap(_ sender: UIBarButtonItem) {
+    
+    let alert = UIAlertController(title: "Save location", message: "Enter name of location", preferredStyle: .alert)
+    
+    alert.addTextField(configurationHandler: nil)
+    
+    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+      //Impelement saving of location
+      
+      
+      let appDel = UIApplication.shared.delegate as! AppDelegate
+      
+      let context = appDel.persistentContainer.viewContext
+      
+      let loc = Location(context: context)
+    
+      let textField = alert.textFields?[0]
+      
+      loc.name = textField?.text
+      loc.latitude = self.markerOnMapView.position.latitude
+      loc.longtitude = self.markerOnMapView.position.longitude
+      loc.dateAdded = Date() as NSDate?
+      
+      appDel.saveContext()
+      
+    }))
+    
+    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+    
+    present(alert, animated: true, completion: nil)
+    
+  }
+  
+  //MARK: GMSMapViewDelegate methods
+  
+  func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+    
+    markerOnMapView.map = nil
+    
+    markerOnMapView = GMSMarker(position: coordinate)
+    markerOnMapView.map = googleMapsView
+    
+    saveLocationButton.isEnabled = true
+    headToLocationButton.isEnabled = true
+  }
   
   //MARK: CLLocation manager delegate methods
-  
-
   
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     print("\n Location manager filed with error: \(error) \n")
@@ -143,11 +201,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
   
   func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
     
+    markerOnMapView.map = nil
+    
     let camera = GMSCameraPosition(target: place.coordinate, zoom: 13.0, bearing: 0, viewingAngle: 0)
     googleMapsView.camera = camera
-    let marker = GMSMarker(position: place.coordinate)
-    marker.isDraggable = true
-    marker.map = googleMapsView
+    markerOnMapView = GMSMarker(position: place.coordinate)
+    markerOnMapView.isDraggable = true
+    markerOnMapView.map = googleMapsView
     self.dismiss(animated: true, completion: nil)
     
   }
