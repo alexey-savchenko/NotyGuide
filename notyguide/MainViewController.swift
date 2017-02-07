@@ -141,6 +141,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "toLocationGuideView" {
       let target = segue.destination as! LocationGuideViewController
+      self.locationManager.stopUpdatingLocation()
       target.marker = markerOnMapView
     }
   }
