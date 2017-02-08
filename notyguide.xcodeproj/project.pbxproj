@@ -17,7 +17,6 @@
 		80B3FBA31E44AD430084259B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B3FBA21E44AD430084259B /* Assets.xcassets */; };
 		80B3FBA61E44AD430084259B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B3FBA41E44AD430084259B /* LaunchScreen.storyboard */; };
 		80DE31551E489C4D00029EF0 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80DE31531E489C4D00029EF0 /* DataModel.xcdatamodeld */; };
-		80E8E0AD1E4A48CE00D0D04E /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E8E0AC1E4A48CE00D0D04E /* LocationService.swift */; };
 		C860182980AFE02DA8874AC8 /* Pods_notyguide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9D169FE17A09BBB658E3B1 /* Pods_notyguide.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +35,6 @@
 		80B3FBA71E44AD430084259B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80DE31541E489C4D00029EF0 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		80E8E0A91E49E8DD00D0D04E /* notyguide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = notyguide.entitlements; sourceTree = "<group>"; };
-		80E8E0AC1E4A48CE00D0D04E /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		A97EB917258B49BB26E3D7C1 /* Pods-notyguide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notyguide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-notyguide/Pods-notyguide.debug.xcconfig"; sourceTree = "<group>"; };
 		B9A84C38682B9F940F2CBE69 /* Pods-notyguide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notyguide.release.xcconfig"; path = "Pods/Target Support Files/Pods-notyguide/Pods-notyguide.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,7 +84,6 @@
 				8071DB071E48402D00DCE2B2 /* LocationGuideViewController.swift */,
 				80A7E3BA1E486B5900ADA632 /* SavedLocationCell.swift */,
 				80DE31531E489C4D00029EF0 /* DataModel.xcdatamodeld */,
-				80E8E0AC1E4A48CE00D0D04E /* LocationService.swift */,
 			);
 			path = notyguide;
 			sourceTree = "<group>";
@@ -242,7 +239,6 @@
 			files = (
 				8071DB081E48402D00DCE2B2 /* LocationGuideViewController.swift in Sources */,
 				8071DB061E47C62100DCE2B2 /* SavedLocationsTableViewController.swift in Sources */,
-				80E8E0AD1E4A48CE00D0D04E /* LocationService.swift in Sources */,
 				8071DB041E44F7B600DCE2B2 /* RoundButton.swift in Sources */,
 				80DE31551E489C4D00029EF0 /* DataModel.xcdatamodeld in Sources */,
 				80A7E3BB1E486B5900ADA632 /* SavedLocationCell.swift in Sources */,

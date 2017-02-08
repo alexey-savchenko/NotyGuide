@@ -23,7 +23,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     GMSServices.provideAPIKey("AIzaSyCW9cIGvDwFdu1GDMYFuyi-c9t5BdL4T3g")
     GMSPlacesClient.provideAPIKey("AIzaSyCW9cIGvDwFdu1GDMYFuyi-c9t5BdL4T3g")
     
+    // Override point for customization after application launch.
+    // Sets background to a blank/empty image
     
+    
+    
+    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+      if granted {
+        print("\n Notificaiton access granted! \n")
+      } else {
+        print("\n \(error.debugDescription)")
+      }
+    }
     
     return true
   }

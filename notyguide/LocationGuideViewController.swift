@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import UserNotifications
 
 class LocationGuideViewController: UIViewController, CLLocationManagerDelegate {
   
@@ -32,14 +33,14 @@ class LocationGuideViewController: UIViewController, CLLocationManagerDelegate {
     
     initMap(with: marker)
     
-    regionToMonitor = CLCircularRegion(center: marker.position, radius: 50, identifier: "targetRegion")
-  
+    regionToMonitor = CLCircularRegion(center: marker.position, radius: 400, identifier: "targetRegion")
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest
     locationManager.requestAlwaysAuthorization()
     
     locationManager.startUpdatingLocation()
     
     locationManager.startMonitoring(for: regionToMonitor)
-  
+    
     Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateDistanceLabel), userInfo: nil, repeats: true)
     Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateSelfMarkerPosition), userInfo: nil, repeats:  true)
     
@@ -50,17 +51,13 @@ class LocationGuideViewController: UIViewController, CLLocationManagerDelegate {
   }
   
   func updateSelfMarkerPosition(){
+    
     selfLocationMarker.map = nil
     selfLocationMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: (locationManager.location?.coordinate.latitude)!,
                                                                     longitude: (locationManager.location?.coordinate.longitude)!))
-    
+    selfLocationMarker.icon = UIImage(named: "locationPoint")
     selfLocationMarker.map = mapView
-    
-    if regionToMonitor.contains(selfLocationMarker.position) {
-      print("\n Contains")
-    }
-    //USE TO IMPLEMENT target entr region
-    //CLCircularRegion
+  
   }
   
   
@@ -83,9 +80,14 @@ class LocationGuideViewController: UIViewController, CLLocationManagerDelegate {
     
     let a = sin(dLat / 2) * sin(dLat / 2) + ds
     let c = 2 * atan2(sqrt(a), sqrt(1 - a))
-    let d = R * c
+    let d = R * c * 1000
     
-    metersToTargetLabel.text = "\(round(d * 1000)) m"
+    if d > 1000 {
+      metersToTargetLabel.text = "\(Int(round(d / 1000))) km"
+    } else{
+      metersToTargetLabel.text = "\(Int(round(d))) m"
+    }
+    
     
     
   }
@@ -98,8 +100,25 @@ class LocationGuideViewController: UIViewController, CLLocationManagerDelegate {
   }
   
   func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-    if region.identifier == "targetRegion"{
-      print("\n Region entered")
+    
+    print("\n Region entered \n")
+    
+    let notifContent = UNMutableNotificationContent()
+    notifContent.title = "In position."
+    notifContent.body = "You have reached your target destination."
+    notifContent.sound = UNNotificationSound(named: "Default")
+    
+    let notifTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+    
+    let request = UNNotificationRequest(identifier: "notif", content: notifContent, trigger: notifTrigger)
+    
+    UNUserNotificationCenter.current().add(request) { (error) in
+      if error != nil {
+        print(error.debugDescription)
+        
+      } else{
+        print("\n Successful notification \n")
+      }
     }
   }
   
@@ -114,20 +133,5 @@ class LocationGuideViewController: UIViewController, CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
     self.locationManager.requestState(for: regionToMonitor)
   }
-  
-  func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
-    if (state == .inside)
-    {
-      //Start Ranging
-      print("\n Inside")
-      
-    }
-    else
-    {
-      //Stop Ranging here
-      print("\n Outside")
-    }
-  }
-  
   
 }

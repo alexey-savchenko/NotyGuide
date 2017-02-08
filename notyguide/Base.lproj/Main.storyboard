@@ -101,7 +101,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="btn" destination="tQf-db-NJg" id="2vg-PF-Kjm"/>
                         <outlet property="btnConstr" destination="AiJ-MO-px1" id="BYS-JP-v4t"/>
@@ -146,7 +146,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqb-pf-WSf">
-                                <rect key="frame" x="151.5" y="105" width="72" height="21"/>
+                                <rect key="frame" x="152" y="105" width="72" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -297,11 +297,15 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cwD-Ug-bvD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="55G-TM-1gi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="55G-TM-1gi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="KEG-gi-O9e">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ZMb-R8-CR3"/>
                     </connections>
@@ -318,6 +322,6 @@
         <image name="plusIcon" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="k9z-QY-HIc"/>
+        <segue reference="YzW-iq-bcK"/>
     </inferredMetricsTieBreakers>
 </document>
