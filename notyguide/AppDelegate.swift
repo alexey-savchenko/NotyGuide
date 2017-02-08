@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import GoogleMaps
 import GooglePlaces
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     GMSServices.provideAPIKey("AIzaSyCW9cIGvDwFdu1GDMYFuyi-c9t5BdL4T3g")
     GMSPlacesClient.provideAPIKey("AIzaSyCW9cIGvDwFdu1GDMYFuyi-c9t5BdL4T3g")
     
+    // Override point for customization after application launch.
+    // Sets background to a blank/empty image
+    
+    
+    
+    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+      if granted {
+        print("\n Notificaiton access granted! \n")
+      } else {
+        print("\n \(error.debugDescription)")
+      }
+    }
     
     return true
   }
@@ -36,6 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
   }
   
+    
   func applicationWillEnterForeground(_ application: UIApplication) {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
   }

@@ -16,6 +16,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
   
   // MARK: Properities
   let locationManager = CLLocationManager()
+  var selfLocationMarker = GMSMarker()
   var plusButtonTimesTapped = 0
   var markerOnMapView = GMSMarker()
   var tempNameOfLocationToSave: String?
@@ -43,16 +44,20 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     locationButton.alpha = 0
     
     locationManager.delegate = self
-    locationManager.requestWhenInUseAuthorization()
+    locationManager.requestAlwaysAuthorization()
     locationManager.startUpdatingLocation()
-    locationManager.startMonitoringSignificantLocationChanges()
+    
     
     btnConstr.constant -= view.bounds.width / 5
     
     googleMapsView.settings.zoomGestures = true
     googleMapsView.settings.scrollGestures = true
-    googleMapsView.isMyLocationEnabled = true
+    
+    Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateSelfMarkerPosition), userInfo: nil, repeats:  true)
+    
     self.googleMapsView.delegate = self
+    
+    
   }
   
   
@@ -68,9 +73,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
                     self.view.layoutIfNeeded()
                     
     }, completion: nil)
+    
+    updateSelfLocation()
   }
   
   //MARK: Outlets
+  
   
   
   @IBAction func notepadButtonTap(_ sender: RoundButton) {
@@ -78,11 +86,29 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
   }
   
   @IBAction func locationButtonTap(_ sender: RoundButton) {
-    if let loc  = googleMapsView.myLocation {
-      let camera = GMSCameraPosition.camera(withLatitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude, zoom: 16.0)
-      self.googleMapsView.camera = camera
-    }
+    
+    updateSelfLocation()
+    
   }
+  
+  func updateSelfLocation(){
+    let selfLocation = locationManager.location?.coordinate
+    
+    let camera = GMSCameraPosition.camera(withLatitude: (selfLocation?.latitude)!, longitude: (selfLocation?.longitude)!, zoom: 16.0)
+    self.googleMapsView.camera = camera
+  }
+  
+  func updateSelfMarkerPosition(){
+    
+    selfLocationMarker.map = nil
+    selfLocationMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: (locationManager.location?.coordinate.latitude)!,
+                                                                    longitude: (locationManager.location?.coordinate.longitude)!))
+    selfLocationMarker.icon = UIImage(named: "locationPoint")
+    selfLocationMarker.map = googleMapsView
+    
+    
+  }
+  
   @IBAction func btnTap(_ sender: RoundButton) {
     
     let btn = sender
@@ -141,6 +167,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "toLocationGuideView" {
       let target = segue.destination as! LocationGuideViewController
+      self.locationManager.stopUpdatingLocation()
       target.marker = markerOnMapView
     }
   }

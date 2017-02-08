@@ -34,6 +34,7 @@
 		80B3FBA51E44AD430084259B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80B3FBA71E44AD430084259B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80DE31541E489C4D00029EF0 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		80E8E0A91E49E8DD00D0D04E /* notyguide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = notyguide.entitlements; sourceTree = "<group>"; };
 		A97EB917258B49BB26E3D7C1 /* Pods-notyguide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notyguide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-notyguide/Pods-notyguide.debug.xcconfig"; sourceTree = "<group>"; };
 		B9A84C38682B9F940F2CBE69 /* Pods-notyguide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notyguide.release.xcconfig"; path = "Pods/Target Support Files/Pods-notyguide/Pods-notyguide.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +72,7 @@
 		80B3FB971E44AD430084259B /* notyguide */ = {
 			isa = PBXGroup;
 			children = (
+				80E8E0A91E49E8DD00D0D04E /* notyguide.entitlements */,
 				80B3FB981E44AD430084259B /* AppDelegate.swift */,
 				80B3FB9A1E44AD430084259B /* MainViewController.swift */,
 				80B3FB9C1E44AD430084259B /* Main.storyboard */,
@@ -142,6 +144,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -362,6 +367,7 @@
 			baseConfigurationReference = A97EB917258B49BB26E3D7C1 /* Pods-notyguide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = notyguide/notyguide.entitlements;
 				DEVELOPMENT_TEAM = 58J8NPW4SN;
 				INFOPLIST_FILE = notyguide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -376,6 +382,7 @@
 			baseConfigurationReference = B9A84C38682B9F940F2CBE69 /* Pods-notyguide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = notyguide/notyguide.entitlements;
 				DEVELOPMENT_TEAM = 58J8NPW4SN;
 				INFOPLIST_FILE = notyguide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
