@@ -17,7 +17,6 @@ class RoundButton: UIButton {
     
     self.clipsToBounds = true
     self.layer.cornerRadius = CGFloat(self.frame.size.width / 2)
-
     
   }
   

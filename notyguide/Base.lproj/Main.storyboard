@@ -297,7 +297,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cwD-Ug-bvD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="55G-TM-1gi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="55G-TM-1gi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -322,6 +322,6 @@
         <image name="plusIcon" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YzW-iq-bcK"/>
+        <segue reference="k9z-QY-HIc"/>
     </inferredMetricsTieBreakers>
 </document>
