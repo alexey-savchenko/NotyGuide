@@ -20,6 +20,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
   var plusButtonTimesTapped = 0
   var markerOnMapView = GMSMarker()
   var tempNameOfLocationToSave: String?
+  var updatedLocationOnce = false
+  var timer: Timer?
   
   // MARK: Outlets
   @IBOutlet weak var googleMapsView: GMSMapView!
@@ -53,7 +55,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     googleMapsView.settings.zoomGestures = true
     googleMapsView.settings.scrollGestures = true
     
-    Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateSelfMarkerPosition), userInfo: nil, repeats:  true)
+    setupTimerForSelfMarkerPosition()
     
     self.googleMapsView.delegate = self
     
@@ -74,12 +76,38 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
                     
     }, completion: nil)
     
-    updateSelfLocation()
+    updateSelfLocationOnce()
   }
   
   //MARK: Outlets
   
+  func toggleContiniousMarkerUpdate(){
+    
+    
+    if timer != nil{
+      timer?.invalidate()
+      timer = nil
+      print("timer stopped")
+      return
+    } else {
+      setupTimerForSelfMarkerPosition()
+      print("timer resumed")
+
+      return
+    }
+
+    
+  }
   
+  func setupTimerForSelfMarkerPosition() {
+    
+    timer = Timer.scheduledTimer(timeInterval: 1,
+                                 target: self,
+                                 selector: #selector(self.updateSelfMarkerPosition),
+                                 userInfo: nil,
+                                 repeats:  true)
+  
+  }
   
   @IBAction func notepadButtonTap(_ sender: RoundButton) {
     performSegue(withIdentifier: "toSavedLocationsView", sender: self)
@@ -96,6 +124,13 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     
     let camera = GMSCameraPosition.camera(withLatitude: (selfLocation?.latitude)!, longitude: (selfLocation?.longitude)!, zoom: 16.0)
     self.googleMapsView.camera = camera
+  }
+  
+  func updateSelfLocationOnce(){
+    if !updatedLocationOnce{
+      self.updateSelfLocation()
+      updatedLocationOnce = true
+    }
   }
   
   func updateSelfMarkerPosition(){
@@ -156,8 +191,11 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     let autocompleteController = GMSAutocompleteViewController()
     autocompleteController.delegate = self
     
+    //toggleContiniousMarkerUpdate()
+    
     self.locationManager.stopUpdatingLocation()
     self.present(autocompleteController, animated: true, completion: nil)
+    
   }
   
   @IBAction func headToLocationButtonTap(_ sender: UIBarButtonItem) {
@@ -187,7 +225,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
       let context = appDel.persistentContainer.viewContext
       
       let loc = Location(context: context)
-    
+      
       let textField = alert.textFields?[0]
       
       loc.name = textField?.text
@@ -227,7 +265,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
   //MARK: Autocomplete delegate methods
   
   func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-    
+  
     markerOnMapView.map = nil
     
     let camera = GMSCameraPosition(target: place.coordinate, zoom: 13.0, bearing: 0, viewingAngle: 0)
@@ -235,6 +273,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     markerOnMapView = GMSMarker(position: place.coordinate)
     markerOnMapView.isDraggable = true
     markerOnMapView.map = googleMapsView
+    
+    saveLocationButton.isEnabled = true
+    headToLocationButton.isEnabled = true
+    
     self.dismiss(animated: true, completion: nil)
     
   }

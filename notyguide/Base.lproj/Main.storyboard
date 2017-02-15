@@ -142,7 +142,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OCA-Ok-h57" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="345" width="375" height="322"/>
+                                <rect key="frame" x="0.0" y="224" width="375" height="443"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqb-pf-WSf">
@@ -156,7 +156,7 @@
                         <constraints>
                             <constraint firstItem="Lqb-pf-WSf" firstAttribute="top" secondItem="nmU-hh-G1E" secondAttribute="bottom" constant="41" id="1bp-bd-adQ"/>
                             <constraint firstItem="uxM-2f-3xb" firstAttribute="centerX" secondItem="lz5-ft-69I" secondAttribute="centerX" id="BDC-Mf-gVV"/>
-                            <constraint firstItem="OCA-Ok-h57" firstAttribute="top" secondItem="uxM-2f-3xb" secondAttribute="bottom" constant="121" id="CLe-rT-1tE"/>
+                            <constraint firstItem="OCA-Ok-h57" firstAttribute="top" secondItem="uxM-2f-3xb" secondAttribute="bottom" id="CLe-rT-1tE"/>
                             <constraint firstItem="4NI-Ds-OKp" firstAttribute="top" secondItem="OCA-Ok-h57" secondAttribute="bottom" id="PZB-Fj-pli"/>
                             <constraint firstItem="uxM-2f-3xb" firstAttribute="top" secondItem="nmU-hh-G1E" secondAttribute="bottom" constant="70" id="Sk4-KQ-QIb"/>
                             <constraint firstItem="Lqb-pf-WSf" firstAttribute="centerX" secondItem="lz5-ft-69I" secondAttribute="centerX" id="XX2-tN-CUH"/>
@@ -171,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ckd-ew-qLk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2831" y="-519"/>
+            <point key="canvasLocation" x="2829.5999999999999" y="-519.49025487256381"/>
         </scene>
         <!--Saved Locations-->
         <scene sceneID="F0J-BJ-Y38">
@@ -186,7 +186,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T8z-Dv-wqR" id="6Wm-b7-bxO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHv-jG-3GJ">
@@ -297,7 +297,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cwD-Ug-bvD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="55G-TM-1gi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="55G-TM-1gi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -322,6 +322,6 @@
         <image name="plusIcon" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YzW-iq-bcK"/>
+        <segue reference="k9z-QY-HIc"/>
     </inferredMetricsTieBreakers>
 </document>
