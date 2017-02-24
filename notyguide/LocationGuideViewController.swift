@@ -18,8 +18,11 @@ class LocationGuideViewController: UIViewController, CLLocationManagerDelegate {
   
   var selfLocationMarker = GMSMarker()
   var regionToMonitor = CLCircularRegion()
+
   var marker = GMSMarker()
   let locationManager = CLLocationManager()
+  
+  
   
   
   @IBOutlet weak var metersToTargetLabel: UILabel!
@@ -104,8 +107,8 @@ class LocationGuideViewController: UIViewController, CLLocationManagerDelegate {
     print("\n Region entered \n")
     
     let notifContent = UNMutableNotificationContent()
-    notifContent.title = "In position."
-    notifContent.body = "You have reached your target destination."
+    notifContent.title = "You are near!"
+    notifContent.body = "You are near your target destination."
     notifContent.sound = UNNotificationSound(named: "Default")
     
     let notifTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)

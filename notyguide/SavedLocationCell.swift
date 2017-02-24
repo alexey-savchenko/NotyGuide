@@ -20,8 +20,8 @@ class SavedLocationCell: UITableViewCell {
     
     nameOfLocation.text = location.name
     dateAdded.text = "\(location.dateAdded!)"
-    latitude.text = "\(location.latitude)"
-    longtitude.text = "\(location.longtitude)"
+    latitude.text = "\((location.latitude * 100) / 100)"
+    longtitude.text = "\((location.longtitude * 1000) / 100)"
     
   }
   
@@ -30,10 +30,6 @@ class SavedLocationCell: UITableViewCell {
     // Initialization code
   }
   
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-    
-    // Configure the view for the selected state
-  }
+  
   
 }

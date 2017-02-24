@@ -127,10 +127,15 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
   }
   
   func updateSelfLocationOnce(){
-    if !updatedLocationOnce{
-      self.updateSelfLocation()
-      updatedLocationOnce = true
+    
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 5)) {
+      if !self.updatedLocationOnce{
+        self.updateSelfLocation()
+        self.updatedLocationOnce = true
+      }
     }
+    
+    
   }
   
   func updateSelfMarkerPosition(){
@@ -190,8 +195,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     
     let autocompleteController = GMSAutocompleteViewController()
     autocompleteController.delegate = self
-    
-    //toggleContiniousMarkerUpdate()
     
     self.locationManager.stopUpdatingLocation()
     self.present(autocompleteController, animated: true, completion: nil)
