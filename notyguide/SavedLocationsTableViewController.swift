@@ -86,6 +86,7 @@ class SavedLocationsTableViewController: UITableViewController {
   }
   
   @IBAction func deleteAllRecordsFromCoreData(_ sender: UIBarButtonItem) {
+    
     let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Location")
     fetchRequest.returnsObjectsAsFaults = false
@@ -108,6 +109,6 @@ class SavedLocationsTableViewController: UITableViewController {
   }
   
   
-  
+
   
 }
